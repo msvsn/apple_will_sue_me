@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="operation">
+                {% if previous and operation %}
+                    {{ previous }} {{ operation }}
+                {% endif %}
+            </div>
+            <div class="result">{{ display }}</div>
+        </div>
+        <form method="post" class="buttons">
+            <button type="submit" name="button" value="π" class="special">π</button>
+            <button type="submit" name="button" value="e" class="special">e</button>
+            <button type="submit" name="button" value="ln" class="special">ln</button>
+            <button type="submit" name="button" value="tan" class="special">tan</button>
+
+            <button type="submit" name="button" value="x²" class="special">x²</button>
+            <button type="submit" name="button" value="√" class="special">√</button>
+            <button type="submit" name="button" value="sin" class="special">sin</button>
+            <button type="submit" name="button" value="cos" class="special">cos</button>
+
+            <button type="submit" name="button" value="AC" class="function">AC</button>
+            <button type="submit" name="button" value="+/-" class="function">+/-</button>
+            <button type="submit" name="button" value="%" class="function">%</button>
+            <button type="submit" name="button" value="÷" class="operator">÷</button>
+
+            <button type="submit" name="button" value="4" class="number">4</button>
+            <button type="submit" name="button" value="5" class="number">5</button>
+            <button type="submit" name="button" value="6" class="number">6</button>
+            <button type="submit" name="button" value="-" class="operator">-</button>
+
+            <button type="submit" name="button" value="7" class="number">7</button>
+            <button type="submit" name="button" value="8" class="number">8</button>
+            <button type="submit" name="button" value="9" class="number">9</button>
+            <button type="submit" name="button" value="×" class="operator">×</button>
+
+            <button type="submit" name="button" value="1" class="number">1</button>
+            <button type="submit" name="button" value="2" class="number">2</button>
+            <button type="submit" name="button" value="3" class="number">3</button>
+            <button type="submit" name="button" value="+" class="operator">+</button>
+
+            <button type="submit" name="button" value="rand" class="special">Rand</button>
+            <button type="submit" name="button" value="0" class="number zero">0</button>
+            <button type="submit" name="button" value="." class="number">.</button>
+            <button type="submit" name="button" value="=" class="operator">=</button>
+        </form>
+    </div>
+</body>
+</html>
